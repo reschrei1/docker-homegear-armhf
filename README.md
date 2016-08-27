@@ -23,10 +23,15 @@ docker run \
         --name homegear \
         -v /etc/localtime:/etc/localtime:ro \
         -v /etc/timezone:/etc/timezone:ro \
-        -v /docker/storage/homegear/physicalinterfaces.conf:/etc/homegear/physicalinterfaces.conf \
+        -v /docker/storage/homegear/homematicbidcos.conf:/etc/homegear/families/homematicbidcos.conf \
         -v /docker/storage/homegear/sql.db:/var/lib/homegear/db.sql \
         -p 2001:2001 -p 2002:2002 -p 2003:2003 \
         -d \
         --restart=always \
         virtualzone/homegear
 ``` 
+
+Notes:
+* /etc/homegear/families/homematicbidcos.conf is the configuration file for HomeMatic BidCoS devices. If you're using another interface, you may have to use another config file. Please refer to the Homegear documentation.
+* /var/lib/homegear/db.sql is the location of the SQL database file.
+* The -d option launches the container into the background. Use -it if you want to use the container interactively.
