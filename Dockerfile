@@ -1,6 +1,6 @@
-FROM resin/rpi-raspbian
-MAINTAINER Janek Thomaschewski <janek@jbbr.net>
-MAINTAINER Heiner Peuser <heiner.peuser@weweave.net>
+FROM resin/rpi-raspbian:jessie
+MAINTAINER Janek Thomaschewski <janek_docker@jbbr.net>
+#MAINTAINER Heiner Peuser <heiner.peuser@weweave.net>
 
 RUN apt-get update && \
     apt-get install -y apt-transport-https wget && \
@@ -11,9 +11,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-#RUN cd /bin && \
-#    wget https://github.com/ohjames/smell-baron/releases/download/v0.4.2/smell-baron && \
-#    chmod a+x smell-baron
 ADD smell-baron /bin/smell-baron
 RUN chmod a+x /bin/smell-baron
 
