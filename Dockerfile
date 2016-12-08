@@ -7,7 +7,7 @@ RUN apt-get update && \
     wget https://homegear.eu/packages/Release.key && apt-key add Release.key && rm Release.key && \
     echo 'deb https://homegear.eu/packages/Raspbian/ jessie/' >> /etc/apt/sources.list.d/homegear.list && \
     apt-get update && \
-    apt-get -y install homegear homegear-homematicbidcos homegear-homematicwired homegear-insteon homegear-max homegear-philipshue homegear-sonos homegear-kodi homegear-ipcam homegear-beckhoff homegear-knx && \
+    apt-get -y install homegear homegear-homematicbidcos homegear-enocean homegear-homematicwired homegear-insteon homegear-max homegear-philipshue homegear-sonos homegear-kodi homegear-ipcam homegear-beckhoff homegear-knx && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
